@@ -1,0 +1,244 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --input-bg: #1e1e1e;
+  --input-border: #444;
+  --button-bg: #2a2a2a;
+  --button-text: #ffffff;
+  --button-hover-bg: #383838;
+  --status-box-bg: #1e1e1e;
+  --container-shadow: rgba(0, 0, 0, 0.3);
+  --accent-color: #4CAF50;
+  --stop-color: #f44336;
+}
+
+.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #333333;
+  --input-bg: #ffffff;
+  --input-border: #ddd;
+  --button-bg: #4CAF50;
+  --button-text: #ffffff;
+  --button-hover-bg: #45a049;
+  --status-box-bg: #ffffff;
+  --container-shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #4CAF50;
+  --stop-color: #f44336;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.container {
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px var(--container-shadow);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--input-border);
+  transition: all 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.app-title {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.header-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-btn, .language-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-color);
+  width: auto;
+  margin: 0;
+}
+
+h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  margin: 0;
+}
+
+.toggle-password i {
+  font-size: 1.2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 4px;
+  color: var(--button-text);
+  cursor: pointer;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-1px);
+}
+
+.stop-btn {
+  background-color: var(--stop-color);
+}
+
+.stop-btn:hover {
+  background-color: #d32f2f;
+}
+
+.logout-btn {
+  background-color: #555;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #333;
+}
+
+.status-box {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--input-border);
+  background-color: var(--status-box-bg);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.status-box div {
+  margin-bottom: 0.5rem;
+}
+
+.status-box strong {
+  font-weight: 600;
+}
+
+#botStatus {
+  font-weight: 500;
+}
+
+.status-running {
+  color: #4CAF50;
+}
+
+.status-stopped {
+  color: #f44336;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+#guardMessage {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.error-message {
+  color: var(--stop-color);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}

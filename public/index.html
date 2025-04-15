@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steam AFK Bot Kontrol Paneli</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+  <div class="container">
+    <div class="header">
+      <h2 class="app-title">AyazDoruck</h2>
+      <div class="header-controls">
+        <button id="languageToggle" class="language-btn">🇺🇸</button>
+        <button id="themeToggle" class="theme-btn">☀️</button>
+      </div>
+    </div>
+
+    <div id="loginSection">
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Steam Kullanıcı Adı" />
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Steam Şifre" />
+          <button id="togglePassword" class="toggle-password" type="button">
+            <i class="material-icons">visibility</i>
+          </button>
+        </div>
+        <div id="loginError" class="error-message" style="display:none;"></div>
+        <button id="loginButton">Giriş Yap</button>
+      </div>
+    </div>
+
+    <div id="guardSection" style="display:none;">
+      <div class="input-group">
+        <h3 id="guardTitle">Steam Guard Kodu Gerekli</h3>
+        <p id="guardMessage"></p>
+        <input type="text" id="guardCode" placeholder="Steam Guard Kodu" autocomplete="off" />
+        <div id="errorMessage" class="error-message" style="display:none;"></div>
+        <button id="submitGuardButton">Onayla</button>
+      </div>
+    </div>
+
+    <div id="statusBox" class="status-box" style="display:none;">
+      <div><strong id="botStatusLabel">Bot Durumu:</strong> <span id="botStatus">Bağlantı Yok 🔴</span></div>
+      <div><strong id="currentGamesLabel">Çalışan Oyunlar:</strong> <span id="currentGames">-</span></div>
+    </div>
+
+    <div id="appSection" style="display:none;">
+      <div class="input-group">
+        <input type="text" id="appid" placeholder="Oyun AppID'leri (virgülle ayırın)" />
+      </div>
+      <div class="button-group">
+        <button id="startBotButton">Başlat</button>
+        <button id="stopBotButton" class="stop-btn">Durdur</button>
+      </div>
+      <div class="button-group" style="margin-top:10px;">
+        <button id="logoutButton" class="logout-btn">Çıkış Yap</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
