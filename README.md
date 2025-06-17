@@ -66,6 +66,8 @@ Follow these steps to set up and run the project on your local machine:
 
 ## Screenshots
 
-<img src="screenshots/sc1.png" alt="Login Page" width="500"/>
-<img src="screenshots/sc3.png" alt="Login Page2" width="500"/>
-<img src="screenshots/sc2.png" alt="Home Page" width="500"/>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+    <img src="screenshots/sc1.png" alt="Login Page" width="300">
+    <img src="screenshots/sc3.png" alt="Login Page2" width="300">
+    <img src="screenshots/sc2.png" alt="Home Page" width="300">
+</div>
