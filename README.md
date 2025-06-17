@@ -1,10 +1,10 @@
-# Steam Hour Bot
+# Steam Hour Bot 🤖
 
 This project is a Node.js-based bot that allows you to accumulate hours on your Steam account by appearing online in specific games. Through a user-friendly web interface, you can log into your Steam account, select games, and start idling hours. It offers both Turkish and English language support, along with dark/light theme options.
 
 ---
 
-## Features
+## Features ✨
 
 * **Easy Steam Account Login:** Supports username, password, and Steam Guard codes.
 * **Multi-Game Idling:** Idle hours in multiple games simultaneously.
@@ -15,7 +15,7 @@ This project is a Node.js-based bot that allows you to accumulate hours on your 
 
 ---
 
-## Requirements
+## Requirements 🛠️
 
 To run this project, you need the following installed on your system:
 
@@ -33,7 +33,7 @@ To run this project, you need the following installed on your system:
 
 ---
 
-## Setup
+## Setup 🚀
 
 Follow these steps to set up and run the project on your local machine:
 
@@ -63,7 +63,7 @@ Follow these steps to set up and run the project on your local machine:
 
 ---
 
-## Usage
+## Usage 🎮
 
 1.  After starting the bot, navigate to **http://localhost:3443** in your web browser.
 2.  In the **Login** section, enter your Steam username and password, then click the "Login" button.
@@ -76,7 +76,7 @@ Follow these steps to set up and run the project on your local machine:
 
 ---
 
-## Screenshots
+## Screenshots 📸
 
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
     <img src="screenshots/sc1.png" alt="Login Page" width="300">
