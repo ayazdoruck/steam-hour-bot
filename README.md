@@ -30,21 +30,24 @@ Follow these steps to set up and run the project on your local machine:
 
 1.  **Clone or Download the Repository:**
     ```bash
-    git clone [https://github.com/ayazdoruck/steam-hour-bot.git](https://github.com/ayazdoruck/steam-hour-bot.git)
+    git clone https://github.com/ayazdoruck/steam-hour-bot.git
+    ```
+2.  **Open Project Directory:**
+    ```bash
     cd steam-hour-bot
     ```
 
-2.  **Install Necessary Dependencies:**
+3.  **Install Necessary Dependencies:**
     ```bash
     npm install
     ```
 
-3.  **Start the Bot:**
+4.  **Start the Bot:**
     ```bash
     npm start
     ```
 
-4.  **To Run in Development Mode (with automatic restart):**
+5.  **To Run in Development Mode (with automatic restart):**
     ```bash
     npm run dev
     ```
