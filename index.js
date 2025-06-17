@@ -16,12 +16,12 @@ let currentGames = [];
 
 wss.on('connection', (ws) => {
     wsGlobal = ws;
-    console.log('Yeni istemci bağlandı');
+    console.log('New client connected'); // Yeni istemci bağlandı
 
     ws.on('message', (message) => {
         try {
             const data = JSON.parse(message);
-            console.log('Alınan mesaj:', data.type);
+            console.log('Received message:', data.type); // Alınan mesaj:
 
             if (data.type === 'login') {
                 handleLogin(data, ws);
@@ -37,16 +37,16 @@ wss.on('connection', (ws) => {
                 sendStatus(ws);
             }
         } catch (error) {
-            console.error('Mesaj işleme hatası:', error);
+            console.error('Message processing error:', error); // Mesaj işleme hatası
             ws.send(JSON.stringify({
                 type: 'error',
-                message: 'Geçersiz istek'
+                message: 'Invalid request' // Geçersiz istek
             }));
         }
     });
 
     ws.on('close', () => {
-        console.log('İstemci bağlantısı kesildi');
+        console.log('Client disconnected'); // İstemci bağlantısı kesildi
         if (ws === wsGlobal) {
             wsGlobal = null;
         }
@@ -55,13 +55,13 @@ wss.on('connection', (ws) => {
 
 function handleLogin(data, ws) {
     client = new SteamUser();
-    
+
     // Hata dinleyicilerini temizle
     client.removeAllListeners('error');
     client.removeAllListeners('steamGuard');
 
     let guardCallbackId = 1;
-    
+
     client.logOn({
         accountName: data.username,
         password: data.password
@@ -71,7 +71,7 @@ function handleLogin(data, ws) {
         const callbackId = guardCallbackId++;
         client.guardCallbacks = client.guardCallbacks || {};
         client.guardCallbacks[callbackId] = callback;
-        
+
         ws.send(JSON.stringify({
             type: 'steamGuard',
             domain: domain || null,
@@ -80,8 +80,8 @@ function handleLogin(data, ws) {
     });
 
     client.on('loggedOn', () => {
-        console.log('Başarıyla giriş yapıldı');
-        ws.send(JSON.stringify({ 
+        console.log('Successfully logged in'); // Başarıyla giriş yapıldı
+        ws.send(JSON.stringify({
             type: 'loggedOn',
             username: data.username
         }));
@@ -89,17 +89,17 @@ function handleLogin(data, ws) {
     });
 
     client.on('error', (err) => {
-        console.error('Steam hatası:', err);
-        let errorMessage = 'Steam bağlantı hatası';
-        
+        console.error('Steam error:', err); // Steam hatası
+        let errorMessage = 'Steam connection error'; // Steam bağlantı hatası
+
         if (err.message.includes('password')) {
-            errorMessage = 'Hatalı kullanıcı adı veya şifre';
+            errorMessage = 'Incorrect username or password'; // Hatalı kullanıcı adı veya şifre
         } else if (err.message.includes('rate limit')) {
-            errorMessage = 'Çok fazla deneme yapıldı, lütfen bekleyin';
+            errorMessage = 'Too many attempts, please wait'; // Çok fazla deneme yapıldı, lütfen bekleyin
         } else if (err.message.includes('SteamGuard')) {
-            errorMessage = 'Steam Guard hatası, lütfen tekrar deneyin';
+            errorMessage = 'Steam Guard error, please try again'; // Steam Guard hatası, lütfen tekrar deneyin
         }
-        
+
         ws.send(JSON.stringify({
             type: 'loginError',
             message: errorMessage
@@ -113,14 +113,14 @@ function handleLogout(ws) {
         client.gamesPlayed([]);
         // Sonra tamamen çıkış yap
         client.logOff();
-        console.log('Kullanıcı tamamen çıkış yaptı');
-        
+        console.log('User logged out completely'); // Kullanıcı tamamen çıkış yaptı
+
         // SteamUser istemcisini sıfırla
         client = new SteamUser();
     }
     currentGames = [];
     isBotRunning = false;
-    
+
     // Kullanıcıya çıkış yapıldığını bildir
     if (ws) {
         ws.send(JSON.stringify({ type: 'loggedOut' }));
@@ -134,11 +134,11 @@ function handleSteamGuardResponse(data) {
         client.guardCallbacks[data.callbackId](data.code);
         delete client.guardCallbacks[data.callbackId];
     } else {
-        console.error('Geçersiz Steam Guard callback ID');
+        console.error('Invalid Steam Guard callback ID'); // Geçersiz Steam Guard callback ID
         if (wsGlobal) {
             wsGlobal.send(JSON.stringify({
                 type: 'error',
-                message: 'Geçersiz Steam Guard isteği'
+                message: 'Invalid Steam Guard request' // Geçersiz Steam Guard isteği
             }));
         }
     }
@@ -151,7 +151,7 @@ function handleStartFarming(data, ws) {
             .filter(id => !isNaN(id) && id > 0);
 
         if (gameIDs.length === 0) {
-            throw new Error('Geçersiz AppID formatı');
+            throw new Error('Invalid AppID format'); // Geçersiz AppID formatı
         }
 
         client.gamesPlayed(gameIDs);
@@ -161,9 +161,9 @@ function handleStartFarming(data, ws) {
             type: 'botStarted',
             games: currentGames
         }));
-        console.log('Bot başlatıldı, oyunlar:', currentGames);
+        console.log('Bot started, games:', currentGames); // Bot başlatıldı, oyunlar:
     } catch (error) {
-        console.error('Bot başlatma hatası:', error);
+        console.error('Bot startup error:', error); // Bot başlatma hatası
         ws.send(JSON.stringify({
             type: 'error',
             message: error.message
@@ -176,7 +176,7 @@ function handleStopFarming(ws) {
     currentGames = [];
     isBotRunning = false;
     ws.send(JSON.stringify({ type: 'botStopped' }));
-    console.log('Bot durduruldu');
+    console.log('Bot stopped'); // Bot durduruldu
 }
 
 function sendStatus(ws) {
@@ -189,18 +189,18 @@ function sendStatus(ws) {
 
 // Hata yönetimi
 process.on('uncaughtException', (err) => {
-    console.error('Yakalanmamış hata:', err);
+    console.error('Uncaught error:', err); // Yakalanmamış hata
     if (wsGlobal) {
         wsGlobal.send(JSON.stringify({
             type: 'error',
-            message: 'Sunucu hatası: ' + err.message
+            message: 'Server error: ' + err.message // Sunucu hatası:
         }));
     }
 });
 
 // WebSocket sunucusu kapatıldığında temizlik
 wss.on('close', () => {
-    console.log('WebSocket sunucusu kapatıldı');
+    console.log('WebSocket server closed'); // WebSocket sunucusu kapatıldı
     if (client) {
         client.gamesPlayed([]);
         client.logOff();
@@ -210,5 +210,5 @@ wss.on('close', () => {
 });
 
 server.listen(3443, () => {
-    console.log('Sunucu çalışıyor: http://localhost:3443');
+    console.log('Server running: http://localhost:3443'); // Sunucu çalışıyor:
 });
