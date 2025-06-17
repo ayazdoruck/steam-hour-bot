@@ -20,7 +20,6 @@ This project is a Node.js-based bot that allows you to accumulate hours on your 
 To run this project, you need the following installed on your system:
 
 * **Node.js** (v14 or higher recommended)
-* **Steam Account** (Steam Guard should be enabled)
 * **Internet Connection**
 
 ---
