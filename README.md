@@ -25,7 +25,11 @@ To run this project, you need the following installed on your system:
 ---
 ## ❗ IMPORTANT ❗
 
-You can log in to only one account at a time.
+
+* **You can log in to only one account at a time.**
+* **In case of any ban, you are responsible.**
+* **As long as you give credit, you can edit the project as you wish and share it publicly.**
+
 
 ---
 
