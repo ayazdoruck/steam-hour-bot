@@ -1,12 +1,28 @@
 {
   "name": "steam-hour-bot",
   "version": "1.0.0",
-  "description": "Steam afk hours bot with Node Js",
-  "main": "index.js",
+  "description": "A Steam hour farming bot with a web interface.",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "steam",
+    "bot",
+    "hour",
+    "farming",
+    "nodejs",
+    "websocket"
+  ],
+  "author": "Ayaz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "steam-user": "^5.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
