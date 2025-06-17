@@ -8,7 +8,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": ["steam", "idle", "bot", "hour-farming", "web-interface"],
-  "author": "Your Name",
+  "author": "ayazdoruck",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
