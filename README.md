@@ -75,8 +75,9 @@ Follow these steps to set up and run the project on your local machine:
 8.  You can change the language (Turkish/English) and theme (Dark/Light) options from the top-right menu.
 
 ---
-## Get in Touch
+## Get in Touch or Donate me 📧
 
+* **Buy me a Coffee:** [coff.ee/pahiy](https://coff.ee/pahiy)
 * **Instagram:** [@ayazdoruck](https://www.instagram.com/ayazdoruck/)
 
 ---
