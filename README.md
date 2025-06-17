@@ -64,8 +64,8 @@ Follow these steps to set up and run the project on your local machine:
 
 ---
 
-## Screenshot
-
-(Note: To add a screenshot, upload an image to the `screenshots` folder and update the path below.)
+## Screenshots
 
 ![Login Page](screenshots/sc1.png)
+![Login Page2](screenshots/sc3.png)
+![Home Page](screenshots/sc2.png)
