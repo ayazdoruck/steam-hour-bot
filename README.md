@@ -23,6 +23,11 @@ To run this project, you need the following installed on your system:
 * **Internet Connection**
 
 ---
+## ❗ IMPORTANT ❗
+
+You can log in to only one account at a time.
+
+---
 
 ## Setup
 
