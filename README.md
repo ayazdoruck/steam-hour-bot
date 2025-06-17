@@ -1,64 +1,68 @@
-# Steam Saat Kasma Botu
+Steam Saat Kasma Botu
+Bu proje, Steam hesabınızda belirli oyunlarda çevrimiçiymiş gibi görünerek saat biriktirmenizi sağlayan bir Node.js tabanlı bottur. Kullanıcı dostu bir web arayüzü üzerinden Steam hesabınıza giriş yapabilir, oyunları seçerek saat kasmaya başlayabilirsiniz. Türkçe ve İngilizce dil desteği ile koyu/açık tema seçenekleri sunar.
+Özellikler
 
-Bu proje, Steam hesaplarınızda istediğiniz oyunlarda saat kasmak için kullanabileceğiniz, web tabanlı bir arayüze sahip bir Node.js botudur.
+Steam hesabına kolay giriş (kullanıcı adı, şifre ve Steam Guard kodu desteği).
+Birden fazla oyunda aynı anda saat kasma.
+Gerçek zamanlı bot durumu takibi (WebSocket ile).
+Türkçe ve İngilizce dil desteği.
+Koyu ve açık tema seçenekleri.
+Basit ve mobil uyumlu web arayüzü.
 
----
+Gereksinimler
 
-## İçindekiler
+Node.js (v14 veya üstü)
+Steam hesabı (Steam Guard etkinleştirilmiş olmalı)
+İnternet bağlantısı
 
-* [Özellikler](#özellikler)
-* [Gereksinimler](#gereksinimler)
-* [Kurulum](#kurulum)
-* [Kullanım](#kullanım)
-* [Nasıl Çalışır?](#nasıl-çalışır)
-* [Katkıda Bulunma](#katkıda-bulunma)
-* [Lisans](#lisans)
+Kurulum
 
----
+Bu depoyu bilgisayarınıza klonlayın veya indirin:git clone https://github.com/kullanici/steam-idle-bot.git
+cd steam-idle-bot
 
-## Özellikler
 
-* **Web Arayüzü:** Kullanımı kolay web tabanlı arayüz ile giriş yapma ve botu yönetme.
-* **Steam Guard Desteği:** E-posta veya mobil onay kodu ile giriş yapabilme.
-* **Çoklu Oyun Desteği:** Aynı anda birden fazla oyunda saat kasabilme.
-* **Bot Durumu:** Botun çalışma durumunu ve hangi oyunlarda saat kastığını görebilme.
-* **Kullanıcı Dostu:** Basit ve anlaşılır bir kurulum ve kullanım süreci.
+Gerekli bağımlılıkları yükleyin:npm install
 
----
 
-## Gereksinimler
+Botu başlatın:npm start
 
-Bu projeyi çalıştırabilmek için sisteminizde aşağıdakilerin yüklü olması gerekmektedir:
+Geliştirme modunda çalıştırmak için (otomatik yeniden başlatma):npm run dev
 
-* **Node.js** (v14 veya üzeri önerilir)
-* **npm** (Node.js ile birlikte gelir)
 
----
 
-## Kurulum
+Kullanım
 
-Projeyi yerel makinenize kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
+Botu başlattıktan sonra tarayıcınızda http://localhost:3000 adresine gidin.
+Giriş Yap bölümünde Steam kullanıcı adınızı ve şifrenizi girin, ardından "Giriş Yap" butonuna tıklayın.
+Eğer Steam Guard etkinse, e-posta veya mobil uygulamanızdan gelen kodu Steam Guard Kodu alanına girin.
+Giriş başarılı olduğunda, saat kasmak istediğiniz oyunların AppID'lerini (ör. 730 CS:GO için) ilgili alana virgülle ayırarak girin (ör. 730,440).
+Botu Başlat butonuna tıklayın. Bot, seçilen oyunlarda çevrimiçiymiş gibi görünecek.
+Bot durumunu ve oynanan oyunları arayüzden takip edebilirsiniz.
+Botu durdurmak için Botu Durdur butonuna, çıkış yapmak için Çıkış Yap butonuna tıklayın.
+Dil (Türkçe/İngilizce) ve tema (Koyu/Açık) seçeneklerini sağ üstteki menüden değiştirebilirsiniz.
 
-1.  **Projeyi Klonlayın:**
-    ```bash
-    git clone [https://github.com/ayazdoruck/steam-hour-bot.git](https://github.com/ayazdoruck/steam-hour-bot.git)
-    ```
-2.  **Proje Dizinine Girin:**
-    ```bash
-    cd steam-hour-bot
-    ```
-3.  **Bağımlılıkları Yükleyin:**
-    ```bash
-    npm install
-    ```
+Ekran Görüntüsü
+(Not: Ekran görüntüsü eklemek için screenshots klasörüne bir resim yükleyin ve yolu güncelleyin.)
+Dikkat Edilmesi Gerekenler
 
----
+Güvenlik: Kullanıcı adı ve şifreniz yerel olarak işlenir, ancak HTTPS kullanılmıyorsa ağda ele geçirilebilir. Üretim ortamında HTTPS/WSS kullanın.
+Steam Guard: E-posta veya mobil kod gerekir. TOTP (2FA uygulamaları) desteklenmez.
+Tek Kullanıcı: Şu anda yalnızca tek bir Steam hesabı için çalışır. Çoklu kullanıcı desteği için geliştirme gereklidir.
+Steam Kuralları: Steam'in hizmet şartlarına uygun kullanın. Aşırı kullanım hesabınızın kısıtlanmasına neden olabilir.
+Hata Günlüğü: Hatalar konsola yazılır. Kalıcı bir log sistemi yoktur.
 
-## Kullanım
+Geliştirme
 
-### Geliştirme Ortamında Çalıştırma (nodemon ile)
+Yeni özellikler veya hata düzeltmeleri için bir pull request açabilirsiniz.
+Önerilen iyileştirmeler:
+HTTPS/WSS desteği.
+Çoklu kullanıcı oturumları.
+Steam TOTP entegrasyonu.
+Kalıcı hata günlüğü.
 
-Kodda değişiklik yaparken otomatik yeniden başlatma özelliğiyle projeyi çalıştırmak için:
 
-```bash
-npm run dev
+
+Lisans
+Bu proje MIT Lisansı altında lisanslanmıştır.
+İletişim
+Sorularınız veya önerileriniz için GitHub Issues üzerinden iletişime geçebilirsiniz.

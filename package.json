@@ -1,28 +1,21 @@
 {
-  "name": "steam-hour-bot",
+  "name": "steam-idle-bot",
   "version": "1.0.0",
-  "description": "A Steam hour farming bot with a web interface.",
-  "main": "app.js",
+  "description": "A Node.js bot to idle Steam games and accumulate hours, with a web-based interface.",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [
-    "steam",
-    "bot",
-    "hour",
-    "farming",
-    "nodejs",
-    "websocket"
-  ],
-  "author": "Ayaz",
+  "keywords": ["steam", "idle", "bot", "hour-farming", "web-interface"],
+  "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2",
-    "steam-user": "^5.0.0",
-    "ws": "^8.18.0"
+    "express": "^4.17.1",
+    "steam-user": "^4.28.0",
+    "ws": "^8.8.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^2.0.15"
   }
 }
