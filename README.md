@@ -77,8 +77,8 @@ Follow these steps to set up and run the project on your local machine:
 ---
 ## Get in Touch or Donate me 📧
 
-* **Buy me a Coffee:** [coff.ee/pahiy](https://coff.ee/pahiy)
-* **Instagram:** [@ayazdoruck](https://www.instagram.com/ayazdoruck/)
+* **☕ Buy me a Cofe:** [coff.ee/pahiy](https://coff.ee/pahiy)
+* **🅾 Instagram:** [@ayazdoruck](https://www.instagram.com/ayazdoruck/)
 
 ---
 ## Screenshots 📸
