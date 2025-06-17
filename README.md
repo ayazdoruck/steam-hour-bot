@@ -75,7 +75,11 @@ Follow these steps to set up and run the project on your local machine:
 8.  You can change the language (Turkish/English) and theme (Dark/Light) options from the top-right menu.
 
 ---
+## Get in Touch
 
+* **Instagram:** [@ayazdoruck](https://www.instagram.com/ayazdoruck/)
+
+---
 ## Screenshots 📸
 
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
