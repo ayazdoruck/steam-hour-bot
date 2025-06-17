@@ -1,74 +1,72 @@
-# Steam Saat Kasma Botu
+# Steam Hour Bot
 
-Bu proje, Steam hesabınızda belirli oyunlarda çevrimiçiymiş gibi görünerek saat biriktirmenizi sağlayan bir Node.js tabanlı bottur. Kullanıcı dostu bir web arayüzü üzerinden Steam hesabınıza giriş yapabilir, oyunları seçerek saat kasmaya başlayabilirsiniz. Türkçe ve İngilizce dil desteği ile koyu/açık tema seçenekleri sunar.
-
----
-
-## Özellikler
-
-* **Steam Hesabına Kolay Giriş:** Kullanıcı adı, şifre ve Steam Guard kodu desteği.
-* **Birden Fazla Oyunda Aynı Anda Saat Kasma:** Tek seferde birden çok oyun için saat kasabilirsiniz.
-* **Gerçek Zamanlı Bot Durumu Takibi:** WebSocket bağlantısı aracılığıyla botun anlık durumunu izleyin.
-* **Türkçe ve İngilizce Dil Desteği:** Kullanıcı arayüzünü istediğiniz dilde kullanabilirsiniz.
-* **Koyu ve Açık Tema Seçenekleri:** Göz yormayan veya aydınlık bir arayüz tercih edebilirsiniz.
-* **Basit ve Mobil Uyumlu Web Arayüzü:** Her cihazdan kolayca erişilebilir tasarım.
+This project is a Node.js-based bot that allows you to accumulate hours on your Steam account by appearing online in specific games. Through a user-friendly web interface, you can log into your Steam account, select games, and start idling hours. It offers both Turkish and English language support, along with dark/light theme options.
 
 ---
 
-## Gereksinimler
+## Features
 
-Bu projeyi çalıştırabilmek için sisteminizde aşağıdakilerin yüklü olması gerekmektedir:
-
-* **Node.js** (v14 veya üstü önerilir)
-* **Steam Hesabı** (Steam Guard etkinleştirilmiş olmalı)
-* **İnternet Bağlantısı**
+* **Easy Steam Account Login:** Supports username, password, and Steam Guard codes.
+* **Multi-Game Idling:** Idle hours in multiple games simultaneously.
+* **Real-time Bot Status Tracking:** Monitor the bot's live status via WebSocket.
+* **Turkish and English Language Support:** Use the interface in your preferred language.
+* **Dark and Light Theme Options:** Choose between a dark or light interface for comfort.
+* **Simple and Mobile-Friendly Web Interface:** Easily accessible design from any device.
 
 ---
 
-## Kurulum
+## Requirements
 
-Projeyi yerel makinenize kurmak ve çalıştırmak için aşağıdaki adımları izleyin:
+To run this project, you need the following installed on your system:
 
-1.  **Depoyu Klonlayın veya İndirin:**
+* **Node.js** (v14 or higher recommended)
+* **Steam Account** (Steam Guard should be enabled)
+* **Internet Connection**
+
+---
+
+## Setup
+
+Follow these steps to set up and run the project on your local machine:
+
+1.  **Clone or Download the Repository:**
     ```bash
     git clone [https://github.com/ayazdoruck/steam-hour-bot.git](https://github.com/ayazdoruck/steam-hour-bot.git)
     cd steam-hour-bot
     ```
-    *Not: Yukarıdaki klonlama URL'sini kendi GitHub kullanıcı adınla güncelledim.*
 
-2.  **Gerekli Bağımlılıkları Yükleyin:**
+2.  **Install Necessary Dependencies:**
     ```bash
     npm install
     ```
 
-3.  **Botu Başlatın:**
+3.  **Start the Bot:**
     ```bash
     npm start
     ```
 
-4.  **Geliştirme Modunda Çalıştırmak İçin (Otomatik Yeniden Başlatma):**
+4.  **To Run in Development Mode (with automatic restart):**
     ```bash
     npm run dev
     ```
 
 ---
 
-## Kullanım
+## Usage
 
-1.  Botu başlattıktan sonra tarayıcınızda **http://localhost:3443** adresine gidin.
-    *Not: Kodunda 3443 portu kullanıldığı için kullanım talimatını buna göre güncelledim.*
-2.  **Giriş Yap** bölümünde Steam kullanıcı adınızı ve şifrenizi girin, ardından "Giriş Yap" butonuna tıklayın.
-3.  Eğer Steam Guard etkinse, e-posta veya mobil uygulamanızdan gelen kodu **Steam Guard Kodu** alanına girin.
-4.  Giriş başarılı olduğunda, saat kasmak istediğiniz oyunların AppID'lerini (ör. **730** CS:GO için, **440** Team Fortress 2 için) ilgili alana virgülle ayırarak girin (ör. `730,440`).
-5.  **Başlat** butonuna tıklayın. Bot, seçilen oyunlarda çevrimiçiymiş gibi görünecek ve saat kasmaya başlayacaktır.
-6.  Bot durumunu ve oynanan oyunları arayüzden takip edebilirsiniz.
-7.  Botu durdurmak için **Durdur** butonuna, Steam hesabından tamamen çıkış yapmak için **Çıkış Yap** butonuna tıklayın.
-8.  Dil (Türkçe/İngilizce) ve tema (Koyu/Açık) seçeneklerini sağ üstteki menüden değiştirebilirsiniz.
+1.  After starting the bot, navigate to **http://localhost:3443** in your web browser.
+2.  In the **Login** section, enter your Steam username and password, then click the "Login" button.
+3.  If Steam Guard is enabled, enter the code you receive via email or your mobile app into the **Steam Guard Code** field.
+4.  Once logged in, enter the AppIDs of the games you wish to idle (e.g., **730** for CS:GO, **440** for Team Fortress 2) into the relevant field, separated by commas (e.g., `730,440`).
+5.  Click the **Start** button. The bot will begin appearing online in the selected games.
+6.  You can monitor the bot's status and the games being played from the interface.
+7.  To stop the bot, click the **Stop** button. To fully log out of your Steam account, click the **Logout** button.
+8.  You can change the language (Turkish/English) and theme (Dark/Light) options from the top-right menu.
 
 ---
 
-## Ekran Görüntüsü
+## Screenshot
 
-(Not: Ekran görüntüsü eklemek için `screenshots` klasörüne bir resim yükleyin ve aşağıdaki yolu güncelleyin.)
+(Note: To add a screenshot, upload an image to the `screenshots` folder and update the path below.)
 
 ```markdown
