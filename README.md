@@ -68,4 +68,4 @@ Follow these steps to set up and run the project on your local machine:
 
 (Note: To add a screenshot, upload an image to the `screenshots` folder and update the path below.)
 
-```markdown
+![Login Page](screenshots/sc1.png)
