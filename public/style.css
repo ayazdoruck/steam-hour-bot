@@ -364,6 +364,13 @@ button:disabled {
   color: var(--text-color);
 }
 
+/* .modal-overlay { display: flex } aynı özgüllükte ve .section-hidden'dan sonra tanımlı olduğu
+   için normal .section-hidden { display: none } kuralı bunu geçemiyordu - burada bileşik
+   selector ile özgüllüğü artırıp kesin kazanmasını sağlıyoruz */
+.modal-overlay.section-hidden {
+  display: none;
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
