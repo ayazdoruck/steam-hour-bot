@@ -12,16 +12,20 @@
     <div class="header">
       <h2 class="app-title">AyazDoruck</h2>
       <div class="header-controls">
-        <button id="languageToggle" class="language-btn">🇺🇸</button>
-        <button id="themeToggle" class="theme-btn">☀️</button>
+        <button id="languageToggle" class="icon-btn lang-btn" type="button" title="Language">EN</button>
+        <button id="themeToggle" class="icon-btn" type="button" title="Theme">
+          <i class="material-icons">light_mode</i>
+        </button>
       </div>
     </div>
 
-    <div id="loginSection">
+    <div id="toast" class="toast section-hidden"></div>
+
+    <div id="loginSection" class="section">
       <div class="input-group">
-        <input type="text" id="username" placeholder="Steam Kullanıcı Adı" />
+        <input type="text" id="username" placeholder="Steam Kullanıcı Adı" autocomplete="username" />
         <div class="password-container">
-          <input type="password" id="password" placeholder="Steam Şifre" />
+          <input type="password" id="password" placeholder="Steam Şifre" autocomplete="current-password" />
           <button id="togglePassword" class="toggle-password" type="button">
             <i class="material-icons">visibility</i>
           </button>
@@ -31,22 +35,23 @@
       </div>
     </div>
 
-    <div id="guardSection" style="display:none;">
+    <div id="guardSection" class="section section-hidden">
       <div class="input-group">
         <h3 id="guardTitle">Steam Guard Kodu Gerekli</h3>
         <p id="guardMessage"></p>
         <input type="text" id="guardCode" placeholder="Steam Guard Kodu" autocomplete="off" />
-        <div id="errorMessage" class="error-message" style="display:none;"></div>
         <button id="submitGuardButton">Onayla</button>
       </div>
     </div>
 
-    <div id="statusBox" class="status-box" style="display:none;">
-      <div><strong id="botStatusLabel">Bot Durumu:</strong> <span id="botStatus">Bağlantı Yok 🔴</span></div>
+    <div id="statusBox" class="section section-hidden status-box">
+      <div><strong id="botStatusLabel">Bot Durumu:</strong> <span id="botStatus" class="status-stopped">Bağlantı Yok</span></div>
       <div><strong id="currentGamesLabel">Çalışan Oyunlar:</strong> <span id="currentGames">-</span></div>
+      <div><strong id="sessionTimeLabel">Bu Oturum:</strong> <span id="sessionTime">00:00:00</span></div>
+      <div><strong id="totalTimeLabel">Toplam Süre:</strong> <span id="totalTime">-</span></div>
     </div>
 
-    <div id="appSection" style="display:none;">
+    <div id="appSection" class="section section-hidden">
       <div class="input-group">
         <input type="text" id="appid" placeholder="Oyun AppID'leri (virgülle ayırın)" />
       </div>
@@ -56,6 +61,16 @@
       </div>
       <div class="button-group" style="margin-top:10px;">
         <button id="logoutButton" class="logout-btn">Çıkış Yap</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal-overlay section-hidden">
+    <div class="modal">
+      <p id="confirmModalText"></p>
+      <div class="button-group">
+        <button id="confirmModalCancel" class="logout-btn">İptal</button>
+        <button id="confirmModalOk" class="stop-btn">Onayla</button>
       </div>
     </div>
   </div>
