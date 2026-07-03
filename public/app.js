@@ -4,7 +4,7 @@ const MAX_RECONNECT_DELAY = 10000;
 
 let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true' || false;
 let steamGuardCallback = null;
-let currentLanguage = localStorage.getItem('languagePreference') || 'tr';
+let currentLanguage = localStorage.getItem('languagePreference') || 'en';
 
 let sessionTimerInterval = null;
 let farmingStartedAtMs = null;
@@ -18,6 +18,7 @@ const translations = {
     loginButton: "Giriş Yap",
     guardTitle: "Steam Guard Kodu Gerekli",
     guardButton: "Onayla",
+    guardCodePlaceholder: "Steam Guard Kodu",
     botStatusLabel: "Bot Durumu:",
     currentGamesLabel: "Çalışan Oyunlar:",
     sessionTimeLabel: "Bu Oturum:",
@@ -44,7 +45,8 @@ const translations = {
     notConnectedYet: "Sunucuya henüz bağlanılamadı, birazdan tekrar deneyin",
     reconnecting: "Yeniden Bağlanıyor",
     steamReconnecting: "Steam bağlantısı koptu, yeniden bağlanılıyor...",
-    steamConnectionLost: "Steam bağlantısı kalıcı olarak koptu, lütfen tekrar giriş yapın."
+    steamConnectionLost: "Steam bağlantısı kalıcı olarak koptu, lütfen tekrar giriş yapın.",
+    invalidServerResponse: "Geçersiz sunucu yanıtı"
   },
   en: {
     title: "Steam AFK Bot - AyazDoruck",
@@ -53,6 +55,7 @@ const translations = {
     loginButton: "Login",
     guardTitle: "Steam Guard Code Required",
     guardButton: "Submit",
+    guardCodePlaceholder: "Steam Guard Code",
     botStatusLabel: "Bot Status:",
     currentGamesLabel: "Running Games:",
     sessionTimeLabel: "This Session:",
@@ -79,7 +82,8 @@ const translations = {
     notConnectedYet: "Not connected to server yet, try again shortly",
     reconnecting: "Reconnecting",
     steamReconnecting: "Steam connection lost, reconnecting...",
-    steamConnectionLost: "Steam connection lost permanently, please log in again."
+    steamConnectionLost: "Steam connection lost permanently, please log in again.",
+    invalidServerResponse: "Invalid server response"
   }
 };
 
@@ -139,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   applyThemeIcon();
 
-  const savedLanguage = localStorage.getItem('languagePreference') || 'tr';
+  const savedLanguage = localStorage.getItem('languagePreference') || 'en';
   currentLanguage = savedLanguage;
   applyTranslations();
 
@@ -167,6 +171,7 @@ function applyTranslations() {
   document.getElementById('loginButton').textContent = lang.loginButton;
 
   document.getElementById('guardTitle').textContent = lang.guardTitle;
+  document.getElementById('guardCode').placeholder = lang.guardCodePlaceholder;
   document.getElementById('submitGuardButton').textContent = lang.guardButton;
 
   document.getElementById('botStatusLabel').textContent = lang.botStatusLabel;
@@ -249,8 +254,8 @@ function connectWebSocket() {
           break;
       }
     } catch (error) {
-      console.error('Mesaj işleme hatası:', error);
-      showToast('Geçersiz sunucu yanıtı', 'error');
+      console.error('Message processing error:', error);
+      showToast(translations[currentLanguage].invalidServerResponse, 'error');
     }
   };
 

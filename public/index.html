@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Steam AFK Bot Kontrol Paneli</title>
+  <title>Steam AFK Bot - AyazDoruck</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="header">
       <h2 class="app-title">AyazDoruck</h2>
       <div class="header-controls">
-        <button id="languageToggle" class="icon-btn lang-btn" type="button" title="Language">EN</button>
+        <button id="languageToggle" class="icon-btn lang-btn" type="button" title="Language">TR</button>
         <button id="themeToggle" class="icon-btn" type="button" title="Theme">
           <i class="material-icons">light_mode</i>
         </button>
@@ -23,44 +23,44 @@
 
     <div id="loginSection" class="section">
       <div class="input-group">
-        <input type="text" id="username" placeholder="Steam Kullanıcı Adı" autocomplete="username" />
+        <input type="text" id="username" placeholder="Steam Username" autocomplete="username" />
         <div class="password-container">
-          <input type="password" id="password" placeholder="Steam Şifre" autocomplete="current-password" />
+          <input type="password" id="password" placeholder="Steam Password" autocomplete="current-password" />
           <button id="togglePassword" class="toggle-password" type="button">
             <i class="material-icons">visibility</i>
           </button>
         </div>
         <div id="loginError" class="error-message" style="display:none;"></div>
-        <button id="loginButton">Giriş Yap</button>
+        <button id="loginButton">Login</button>
       </div>
     </div>
 
     <div id="guardSection" class="section section-hidden">
       <div class="input-group">
-        <h3 id="guardTitle">Steam Guard Kodu Gerekli</h3>
+        <h3 id="guardTitle">Steam Guard Code Required</h3>
         <p id="guardMessage"></p>
-        <input type="text" id="guardCode" placeholder="Steam Guard Kodu" autocomplete="off" />
-        <button id="submitGuardButton">Onayla</button>
+        <input type="text" id="guardCode" placeholder="Steam Guard Code" autocomplete="off" />
+        <button id="submitGuardButton">Submit</button>
       </div>
     </div>
 
     <div id="statusBox" class="section section-hidden status-box">
-      <div><strong id="botStatusLabel">Bot Durumu:</strong> <span id="botStatus" class="status-stopped">Bağlantı Yok</span></div>
-      <div><strong id="currentGamesLabel">Çalışan Oyunlar:</strong> <span id="currentGames">-</span></div>
-      <div><strong id="sessionTimeLabel">Bu Oturum:</strong> <span id="sessionTime">00:00:00</span></div>
-      <div><strong id="totalTimeLabel">Toplam Süre:</strong> <span id="totalTime">-</span></div>
+      <div><strong id="botStatusLabel">Bot Status:</strong> <span id="botStatus" class="status-stopped">No Connection</span></div>
+      <div><strong id="currentGamesLabel">Running Games:</strong> <span id="currentGames">-</span></div>
+      <div><strong id="sessionTimeLabel">This Session:</strong> <span id="sessionTime">00:00:00</span></div>
+      <div><strong id="totalTimeLabel">Total Time:</strong> <span id="totalTime">-</span></div>
     </div>
 
     <div id="appSection" class="section section-hidden">
       <div class="input-group">
-        <input type="text" id="appid" placeholder="Oyun AppID'leri (virgülle ayırın)" />
+        <input type="text" id="appid" placeholder="Game AppIDs (comma separated)" />
       </div>
       <div class="button-group">
-        <button id="startBotButton">Başlat</button>
-        <button id="stopBotButton" class="stop-btn">Durdur</button>
+        <button id="startBotButton">Start</button>
+        <button id="stopBotButton" class="stop-btn">Stop</button>
       </div>
       <div class="button-group" style="margin-top:10px;">
-        <button id="logoutButton" class="logout-btn">Çıkış Yap</button>
+        <button id="logoutButton" class="logout-btn">Logout</button>
       </div>
     </div>
   </div>
@@ -69,8 +69,8 @@
     <div class="modal">
       <p id="confirmModalText"></p>
       <div class="button-group">
-        <button id="confirmModalCancel" class="logout-btn">İptal</button>
-        <button id="confirmModalOk" class="stop-btn">Onayla</button>
+        <button id="confirmModalCancel" class="logout-btn">Cancel</button>
+        <button id="confirmModalOk" class="stop-btn">Confirm</button>
       </div>
     </div>
   </div>
